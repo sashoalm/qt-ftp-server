@@ -22,10 +22,13 @@ symbian:TARGET.CAPABILITY += NetworkServices
 # CONFIG += mobility
 # MOBILITY +=
 
-SOURCES += main.cpp mainwindow.cpp \
-    debuglogdialog.cpp
+SOURCES += main.cpp \
+    mainwindow.cpp \
+    debuglogdialog.cpp \
+    ftpthread.cpp
 HEADERS += mainwindow.h \
-    debuglogdialog.h
+    ftpthread.h \
+    debuglogdialog.h 
 FORMS += mainwindow.ui \
     debuglogdialog.ui
 QT += network
@@ -40,10 +43,10 @@ RESOURCES += \
     res.qrc
 
 OTHER_FILES += \
-    cacert.pem \
-    android/AndroidManifest.xml
+    cacert.pem 
 
-ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+# android
+android:include(android/android.pri)
 
 DISTFILES +=
 
